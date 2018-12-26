@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Take A Tour</title>
+    <link rel="stylesheet" href="{% static "css/tour.css" %}">
+  </head>
+  <body>
+    <style media="screen">
+    @font-face {
+      font-family: Leaf;
+      src:url("{% static "font/leaf.ttf" %}");
+    }
+    @font-face {
+      font-family: Montserrat-ExtraBold;
+      src: url("{% static "font/Montserrat-ExtraBold.ttf" %}");
+    }
+    @font-face {
+      font-family: Montserrat-Regular;
+      src: url("{% static "font/Montserrat-Regular.ttf" %}");
+    }
+    @font-face {
+      font-family: Montserrat-Bold;
+      src: url("{% static "font/Montserrat-Bold.ttf" %}");
+
+    }
+    .half-body{
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("{% static 'images/cottage.jpg' %}");
+      background-size: 350%;
+
+    }
+    .description2-text-container{
+      font-size: 278%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      font-family: Leaf;
+      color: #e7e7e7;
+      background-image: url("{% static 'images/off-road.jpg' %}");
+    }
+    .description3-text-container{
+      font-size: 278%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      font-family: Leaf;
+      color: #e7e7e7;
+      background-image: url("{% static 'images/header-bg.jpg' %}");
+    }
+    .description4-text-container{
+      font-size: 278%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      font-family: Leaf;
+      color: #e7e7e7;
+      background-image: url("{% static 'images/farm.jpg' %}");
+    }
+    .description5-text-container{
+      font-size: 278%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      font-family: Leaf;
+      color: #e7e7e7;
+      background-image: url("{% static 'images/campfire.png' %}");
+    }
+    .description6-text-container{
+      font-size: 278%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      font-family: Leaf;
+      color: #e7e7e7;
+      background-image: url("{% static 'images/monsoon.jpg' %}");
+    }
+    </style>
+    <div class="half-body">
+      <div class="outer-background">
+        <div class="header-outer">
+          <div class="header-inner">
+              <div class="name-container">
+                <div class="inner-name-container">
+                  <a href="{% url 'Home_Page' %}" id="title-head">VAGAMON FARM & RESORT</a>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="menu-layer-top">
+          <div class="menu-layer">
+            <a href="{% url 'Tour_Page' %}">Take A Tour</a>
+            <a href="{% url 'Home_Page' %}#about-page-section">About Us</a>
+            <a href="{% url 'Home_Page' %}#contact-page-section">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="centre-text-container">
+           <h1>\ Luxurious Stay \</h1><br>
+        </div>
+      </div>
+    </div>
+    <div class="lower-body">
+      <section class="description-page-section">
+          <div class="inner-page-section">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      </section>
+      <section class="event-section">
+        <div class="text-center">
+          <div class="description2-text-container">
+            <br><br><br><h1>\ Off Road Trekking \</h1><br><br><br>
+          </div>
+        </div>
+      </section>
+      <section class="description-page-section">
+          <div class="inner-page-section">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      </section>
+      <section class="event-section">
+        <div class="text-center">
+          <div class="description3-text-container">
+             <br><br><br><h1>\ Coffee Near Lake \</h1><br><br><br>
+          </div>
+        </div>
+      </section>
+      <section class="description-page-section">
+          <div class="inner-page-section">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      </section>
+      <section class="event-section">
+        <div class="text-center">
+          <div class="description4-text-container">
+             <br><br><br><h1>\ Farm Visit \</h1><br><br><br>
+          </div>
+        </div>
+      </section>
+      <section class="description-page-section">
+          <div class="inner-page-section">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      </section>
+      <section class="event-section">
+        <div class="text-center">
+          <div class="description5-text-container">
+             <br><br><br><h1>\ Campfire \</h1><br><br><br>
+          </div>
+        </div>
+      </section>
+      <section class="description-page-section">
+          <div class="inner-page-section">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      </section>
+      <section class="event-section">
+        <div class="text-center">
+          <div class="description6-text-container">
+             <br><br><br><h1>\ Special Monsoon Packages \</h1><br><br><br>
+          </div>
+        </div>
+      </section>
+      <section class="description-page-section">
+          <div class="inner-page-section">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      </section>
+    </div>
+  </body>
+  <div class="footer-body">
+    <div class="footer-inner-body">
+      <h4>MENU</h4>
+      <a href="#">About Us</a><br>
+      <a href="#">Contact Us</a><br>
+      <hr>
+      <div class="flex-box">
+        <div>
+          <p>&copy Copyright Wagamon Farms & Resorts</p><br>
+        </div>
+        <div>
+          <p id="design-label">Designed and developed by Ajay Dev D</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>
