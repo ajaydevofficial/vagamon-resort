@@ -160,3 +160,9 @@ hr{
 #error{
   color: red;
 }
+.error-class{
+  background-color: rgb(255, 191, 71);
+  color: rgb(255, 60, 79);
+  padding: 2%;
+  border-radius: 5px;
+}

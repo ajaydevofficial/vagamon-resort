@@ -27,7 +27,15 @@ def login_page(request):
 def book_page(request):
     context = {}
     if request.method =='POST':
-        print(request.POST)
+        package = request.POST['package-type']
+        inDate = request.POST['in-date']
+        outDate = request.POST['out-date']
+        try:
+            qs = booking.objects.get(package=package,inDate=inDate,outDate=outDate)
+            if qs:
+                return render(request,"book.html",{"exists":True})
+        except:
+            pass
     return render(request,"book.html",context)
 
 def admin_page(request):

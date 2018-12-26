@@ -82,6 +82,15 @@
             <label class="search-input" for="out-date">Check-out date </label><br>
             <input required class="search-input" type="date" name="out-date"><br>
             <input class="search-button" type="submit" name="search" value="Book">
+            {% if exists %}
+            <div class="error-class">
+              <script type="text/javascript">
+                alert("Sorry ! Booking for this date and package is sold out, try again with another date or package")
+              </script>
+                <h2>Sold Out :(</h2>
+                <p>Booking for this particular package at this timeline is sold out please try another date or package</p>
+              {% endif %}
+            </div>
           </form>
         </div>
         <br><br>
@@ -90,7 +99,6 @@
     <div class="lower-body">
       <section id="about-page-section">
           <div class="inner-page-section">
-
           </div>
       </section>
     </div>
