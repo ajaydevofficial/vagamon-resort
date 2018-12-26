@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Wagamon Resort</title>
+    <link rel="stylesheet" href="{% static "css/book.css" %}">
+  </head>
+  <body>
+  <style media="screen">
+  @font-face {
+    font-family: Leaf;
+    src:url("{% static "font/leaf.ttf" %}");
+  }
+  @font-face {
+    font-family: Montserrat-ExtraBold;
+    src: url("{% static "font/Montserrat-ExtraBold.ttf" %}");
+  }
+  @font-face {
+    font-family: Montserrat-Regular;
+    src: url("{% static "font/Montserrat-Regular.ttf" %}");
+  }
+  @font-face {
+    font-family: Montserrat-Bold;
+    src: url("{% static "font/Montserrat-Bold.ttf" %}");
+
+  }
+  .half-body{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("{% static "images/bg-img.png" %}");
+    background-size: 320%;
+
+  }
+  #about-page-section{
+    padding-top: 5%;
+    background-color: #e2e2e2;
+    background-image: url("{% static "images/concrete-wall.png" %}");
+    opacity: 0.9;
+  }
+  #contact-page-section{
+    padding-top: 5%;
+    background-color: #d9d9d9;
+    background-image: url("{% static "images/concrete-wall.png" %}");
+    opacity: 0.9;
+  }
+  </style>
+    <div class="half-body">
+      <div class="outer-background">
+        <div class="header-outer">
+          <div class="header-inner">
+              <div class="name-container">
+                <div class="inner-name-container">
+                  <a href="{% url 'Home_Page' %}" id="title-head">VAGAMON FARM & RESORT</a>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="menu-layer-top">
+          <div class="menu-layer">
+            <a href="{% url 'Tour_Page' %}">Take A Tour</a>
+            <a href="{% url 'Home_Page' %}#about-page-section">About Us</a>
+            <a href="{% url 'Home_Page' %}#contact-page-section">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="form-div">
+          <form class="form-control" action="#" method="post">{% csrf_token %}
+            <h1 id="search-text">\ Login Here \</h1>
+            <br>
+            <label class="search-input" for="select-package">Username</label><br>
+            <input required class="search-input" type="text" name="username" placeholder="Enter username">
+            <br>
+            <label class="search-input" for="in-date">Password</label><br>
+            <input required class="search-input" type="password" name="password" placeholder="Enter password"><br>
+            <input class="search-button" type="submit" name="login" value="Login">
+            {% if invalid %}
+              <p id="error">Please enter valid credentials!</p>
+            {% endif %}
+          </form>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="lower-body">
+      <section id="about-page-section">
+          <div class="inner-page-section">
+
+          </div>
+      </section>
+    </div>
+  </body>
+  <div class="footer-body">
+    <div class="footer-inner-body">
+      <h4>MENU</h4>
+      <a href="#">About Us</a><br>
+      <a href="#">Contact Us</a><br>
+      <hr>
+      <div class="flex-box">
+        <div>
+          <p>&copy Copyright Wagamon Farms & Resorts</p><br>
+        </div>
+        <div>
+          <p id="design-label">Designed and developed by Ajay Dev D</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>
