@@ -1,10 +1,19 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import get_user_model,authenticate,login
 from booking.models import booking
+from query.models import query
 from django.contrib.auth import logout
 
 def home_page(request):
     context = {}
+    if request.method=='POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        text = request.POST['query']
+        query.objects.create(name=name,email=email,phone=phone,text=text)
+        return render(request,"index.html",{"success":True})
+
     return render(request,"index.html",context)
 
 def tour_page(request):

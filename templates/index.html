@@ -68,11 +68,19 @@
       </div>
       <div class="text-center">
         <div class="centre-text-container">
+           {% if request.user.is_superuser %}
+           <h1>\ Welcome {{ user.get_username }} \</h1>
+           <p>Manage your bookings</p>
+           <div class="tour-button">
+             <a href="{% url 'Admin_Page' %}">ADD BOOKING</a>
+           </div>
+           {% else %}
            <h1>\ Holidays at Vagamon \</h1>
            <p>Spent your precious holidays at our paradise</p>
            <div class="tour-button">
              <a href="{% url 'Book_Page' %}">BOOK NOW</a>
            </div>
+           {% endif %}
         </div>
       </div>
     </div>
@@ -86,7 +94,7 @@
       <section id="contact-page-section">
           <div class="inner-page-section">
           <h1>Contact Us</h1>
-          <form class="contact-form" action="index.html" method="post">
+          <form class="contact-form" action="#" method="post">{% csrf_token %}
             <label for="name">Name : </label><br>
             <input required type="text" name="name" placeholder="Enter Name"><br>
             <label for="email">Email : </label><br>
@@ -94,9 +102,14 @@
             <label for="email">Phone(With Country Code) : </label><br>
             <input required ="true" type="number" name="phone" value="" placeholder="Enter Phone"><br>
             <label for="something">What's on your mind : </label><br>
-            <input id="something" required type="text" name="something" placeholder="Type Something"><br>
+            <input id="something" required type="text" name="query" placeholder="Type Something"><br>
             <input id="submit-button" type="submit" name="submit" value="Submit" method="post">
           </form>
+          {% if success%}
+          <script type="text/javascript">
+            alert('Query succesfully submitted :)')
+          </script>
+          {% endif %}
           </div>
       </section>
     </div>
