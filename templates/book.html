@@ -69,6 +69,7 @@
       <div class="text-center">
         <div class="form-div">
           <form class="form-control" action="#" method="post">{% csrf_token %}
+            <script type="text/javascript" src="{% static 'js/datecmp.js' %}">compare();</script>
             <h1 id="search-text">\ Search Here \</h1>
             <br>
             <label class="search-input" for="select-package">Package </label><br>
@@ -78,9 +79,9 @@
             </select>
             <br>
             <label class="search-input" for="in-date">Check-in date </label><br>
-            <input required class="search-input" type="date" name="in-date"><br>
+            <input required id="startDate" type="date" name="in-date"><br>
             <label class="search-input" for="out-date">Check-out date </label><br>
-            <input required class="search-input" type="date" name="out-date"><br>
+            <input required id="endDate" type="date" name="out-date" onblur="compare();"><br>
             <input class="search-button" type="submit" name="search" value="Book">
             {% if exists %}
             <div class="error-class">
@@ -93,12 +94,6 @@
         </div>
         <br><br>
       </div>
-    </div>
-    <div class="lower-body">
-      <section id="about-page-section">
-          <div class="inner-page-section">
-          </div>
-      </section>
     </div>
   </body>
   <div class="footer-body">

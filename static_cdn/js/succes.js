@@ -1,1 +1,1 @@
-alert('Query succesfully submitted :)')
+alert('Succesfully submitted :)')
