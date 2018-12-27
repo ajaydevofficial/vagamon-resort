@@ -88,10 +88,7 @@
         <br><br>
       </div>
       {% else %}
-        <script type="text/javascript">
-          alert("You are not authorised to view this page! Redirecting to home_page")
-          window.location.replace("{% url 'Home_Page' %}");
-        </script>
+        <script type="text/javascript"  src="{% static 'js/noauth.js' %}"></script>
       {% endif %}
     </div>
   </body>

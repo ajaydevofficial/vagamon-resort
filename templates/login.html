@@ -49,10 +49,7 @@
 
   </style>
   {% if request.user.is_superuser %}
-  <script type="text/javascript">
-    alert("Already Logged in! Redirecting to home page")
-    window.location.replace("{% url 'Home_Page' %}")
-  </script>
+  <script type="text/javascript" src="{% static 'js/alreadylogged.js' %}"></script>
   {% endif %}
     <div class="half-body">
       <div class="outer-background">

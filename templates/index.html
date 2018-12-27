@@ -106,9 +106,7 @@
             <input id="submit-button" type="submit" name="submit" value="Submit" method="post">
           </form>
           {% if success%}
-          <script type="text/javascript">
-            alert('Query succesfully submitted :)')
-          </script>
+          <script type="text/javascript" src="{% static 'js/succes.js' %}"></script>
           {% endif %}
           </div>
       </section>
