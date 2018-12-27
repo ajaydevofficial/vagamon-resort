@@ -186,8 +186,13 @@
   <div class="footer-body">
     <div class="footer-inner-body">
       <h4>MENU</h4>
-      <a href="#">About Us</a><br>
-      <a href="#">Contact Us</a><br>
+      <a href="{% url 'Home_Page' %}#about-page-section">About Us</a><br>
+      <a href="{% url 'Home_Page' %}#contact-page-section">Contact Us</a><br>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'Logout_Page' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'Login_Page' %}">Admin Login</a>
+      {% endif %}
       <hr>
       <div class="flex-box">
         <div>

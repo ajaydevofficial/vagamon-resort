@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from .views import home_page,tour_page,book_page,login_page,admin_page
+from .views import home_page,tour_page,book_page,login_page,admin_page,logout_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +29,7 @@ urlpatterns = [
     path('book/',book_page,name="Book_Page"),
     path('login/',login_page,name="Login_Page"),
     path('admin-book/',admin_page,name="Admin_Page"),
+    path('logout/',logout_page,name="Logout_Page"),
 ]
 
 if settings.DEBUG:

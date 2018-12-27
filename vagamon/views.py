@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import get_user_model,authenticate,login
 from booking.models import booking
+from django.contrib.auth import logout
 
 def home_page(request):
     context = {}
@@ -50,3 +51,7 @@ def admin_page(request):
         booking.objects.create(package=package,inDate=inDate,outDate=outDate)
         return redirect(home_page)
     return render(request,"admin.html",context)
+
+def logout_page(request):
+    logout(request)
+    return redirect(home_page)
