@@ -82,11 +82,22 @@
             <input required class="search-input" type="date" name="in-date"><br>
             <label class="search-input" for="out-date">Check-out date </label><br>
             <input required class="search-input" type="date" name="out-date"><br>
+            <label class="search-input" for="indiviuals">Indiviuals</label><br>
+            <input required class="search-input-min" type="number" name="individuals"><br>
+            <label class="search-input" for="status">Payment status</label><br>
+            <select required class="search-input-min" name="status">
+              <option value=""></option>
+              <option class="search-input-min" value="paid">Paid</option>
+              <option class="search-input-min" value="unpaid">Unpaid</option>
+            </select><br>
             <input class="search-button" type="submit" name="search" value="Add Booking">
           </form>
         </div>
         <br><br>
       </div>
+        {% if success %}
+          <script type="text/javascript"  src="{% static 'js/succes.js' %}"></script>
+        {% endif %}
       {% else %}
         <script type="text/javascript"  src="{% static 'js/noauth.js' %}"></script>
       {% endif %}

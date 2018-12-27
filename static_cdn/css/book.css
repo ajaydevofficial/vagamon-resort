@@ -166,3 +166,11 @@ hr{
   padding: 2%;
   border-radius: 5px;
 }
+.search-input-min{
+    margin-top: 1.5%;
+    margin-bottom:1.5%;
+    width:20%;
+    border: none;
+    padding:2% 0% 2% 0%;
+    font-family: Montserrat-Regular;
+}

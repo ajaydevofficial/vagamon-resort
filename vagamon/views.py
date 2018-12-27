@@ -54,11 +54,10 @@ def admin_page(request):
         package = request.POST['package-type']
         inDate = request.POST['in-date']
         outDate = request.POST['out-date']
-        print(package)
-        print(inDate)
-        print(outDate)
-        booking.objects.create(package=package,inDate=inDate,outDate=outDate)
-        return redirect(home_page)
+        status = request.POST['status']
+        individuals = request.POST['individuals']
+        booking.objects.create(package=package,inDate=inDate,outDate=outDate,status=status,individuals=individuals)
+        return render(request,"admin.html",{"success":True})
     return render(request,"admin.html",context)
 
 def logout_page(request):
