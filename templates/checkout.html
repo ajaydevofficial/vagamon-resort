@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Wagamon Resort</title>
-    <link rel="stylesheet" href="{% static "css/book.css" %}">
+    <link rel="stylesheet" href="{% static "css/checkout.css" %}">
   </head>
   <body>
   <style media="screen">
@@ -25,29 +25,20 @@
     src: url("{% static "font/Montserrat-Bold.ttf" %}");
 
   }
-  .half-body{
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("{% static "images/bg-img.png" %}");
-    background-size: 320%;
-
-  }
-  #about-page-section{
-    padding-top: 5%;
+  .about-page-section{
+    padding-top:0%;
     background-color: #e2e2e2;
     background-image: url("{% static "images/concrete-wall.png" %}");
     opacity: 0.9;
   }
-  #contact-page-section{
+  .contact-page-section{
     padding-top: 5%;
     background-color: #d9d9d9;
     background-image: url("{% static "images/concrete-wall.png" %}");
     opacity: 0.9;
   }
   </style>
-    <div class="half-body">
+    <div class="about-page-section"">
       <div class="outer-background">
         <div class="header-outer">
           <div class="header-inner">
@@ -68,10 +59,9 @@
         </div>
       </div>
       <div class="text-center">
-        {% if request.user.is_authenticated %}
         <div class="form-div">
           <form class="form-control" action="#" method="post">{% csrf_token %}
-            <h1 id="search-text">\ Search Here \</h1>
+            <h1 id="search-text">\ Checkout \</h1><hr>
             <br>
             <label class="search-input" for="select-package">Package </label><br>
             <select required class="search-input" name="package-type">
@@ -84,24 +74,18 @@
             <label class="search-input" for="out-date">Check-out date </label><br>
             <input required class="search-input" type="date" name="out-date"><br>
             <label class="search-input" for="indiviuals">Indiviuals</label><br>
-            <input required class="search-input-min" type="number" name="individuals"><br>
+            <input required class="search-input-min" type="number" name="individuals" value="0"><br>
             <label class="search-input" for="status">Payment status</label><br>
             <select required class="search-input-min" name="status">
-              <option value=""></option>
+              <option value="">Select</option>
               <option class="search-input-min" value="paid">Paid</option>
               <option class="search-input-min" value="unpaid">Unpaid</option>
-            </select><br>
-            <input class="search-button" type="submit" name="search" value="Add Booking">
+            </select><br><hr>
+            <input class="search-button" type="submit" name="search" value="Pay">
           </form>
         </div>
         <br><br>
       </div>
-        {% if success %}
-          <script type="text/javascript"  src="{% static 'js/succes.js' %}"></script>
-        {% endif %}
-      {% else %}
-        <script type="text/javascript"  src="{% static 'js/noauth.js' %}"></script>
-      {% endif %}
     </div>
   </body>
   <div class="footer-body">
