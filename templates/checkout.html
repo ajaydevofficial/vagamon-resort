@@ -38,7 +38,7 @@
     opacity: 0.9;
   }
   </style>
-    <div class="about-page-section"">
+    <div class="about-page-section">
       <div class="outer-background">
         <div class="header-outer">
           <div class="header-inner">
@@ -60,28 +60,24 @@
       </div>
       <div class="text-center">
         <div class="form-div">
+          <script type="text/javascript" src="{% static 'js/livecart.js' %}">display();</script>
           <form class="form-control" action="#" method="post">{% csrf_token %}
             <h1 id="search-text">\ Checkout \</h1><hr>
             <br>
             <label class="search-input" for="select-package">Package </label><br>
-            <select required class="search-input" name="package-type">
+            <select required id="search-input" name="package-type" onchange="display();">
               <option value="">Select Package</option>
               <option class="search-input" value="cottage-only">Cottage and Food</option>
+              <option class="search-input" value="other">other</option>
             </select>
             <br>
             <label class="search-input" for="in-date">Check-in date </label><br>
-            <input required class="search-input" type="date" name="in-date"><br>
+            <input required id="search-input-in" type="date" name="in-date" onchange="display();"><br>
             <label class="search-input" for="out-date">Check-out date </label><br>
-            <input required class="search-input" type="date" name="out-date"><br>
+            <input required id="search-input-out" type="date" name="out-date" onchange="display();"><br>
             <label class="search-input" for="indiviuals">Indiviuals</label><br>
-            <input required class="search-input-min" type="number" name="individuals" value="0"><br>
-            <label class="search-input" for="status">Payment status</label><br>
-            <select required class="search-input-min" name="status">
-              <option value="">Select</option>
-              <option class="search-input-min" value="paid">Paid</option>
-              <option class="search-input-min" value="unpaid">Unpaid</option>
-            </select><br><hr>
-            <input class="search-button" type="submit" name="search" value="Pay">
+            <input required id="search-input-min" type="number" name="individuals" value="0" onchange="display();"><br><hr>
+            <input id="search-button" type="submit" name="search" value="Pay Rs.0">
           </form>
         </div>
         <br><br>
