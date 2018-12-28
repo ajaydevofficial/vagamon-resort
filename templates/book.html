@@ -69,7 +69,7 @@
       </div>
       <div class="text-center">
         <div class="form-div">
-          <form class="form-control" action="#" method="post">{% csrf_token %}
+          <form class="form-control" action="{% url 'Checkout_Page' %}" method="post">{% csrf_token %}
             <script type="text/javascript" src="{% static 'js/datecmp.js' %}">compare();</script>
             <h1 id="search-text">\ Search Here \</h1>
             <br>
