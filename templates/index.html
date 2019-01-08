@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Wagamon Resort</title>
     <link rel="stylesheet" href="{% static "css/home.css" %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static "css/star.css" %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -52,6 +52,9 @@
       color: orange;
 
     }
+    .star-class span{
+
+    }
   </style>
     <div class="half-body">
       <div class="outer-background">
@@ -69,7 +72,6 @@
             <a href="{% url 'Home_Page' %}">Home</a>
             <a href="{% url 'Tour_Page' %}">Take A Tour</a>
             <a href="{% url 'Home_Page' %}#about-page-section">About Us</a>
-            <a href="{% url 'Home_Page' %}#contact-page-section">Contact Us</a>
           </div>
         </div>
       </div>
@@ -106,17 +108,19 @@
             <input id ="name" required type="text" name="name" placeholder="Enter Name"><br>
             <label for="email">Email : </label><br>
             <input id="email" required ="true" type="email" name="email" value="" placeholder="Enter Email"><br>
-            <label for="email">Phone(With Country Code) : </label><br>
+            <label for="email">Phone : </label><br>
             <input id="phone" required ="true" type="number" name="phone" value="" placeholder="Enter Phone"><br>
             <label for="something">Remarks: </label><br>
             <input id="something" required type="text" name="something" placeholder="Type Something"><br><br>
             <script src="{% static 'js/rating.js' %}"></script>
-            <span onmouseover="starmark(this)" onclick="starmark(this)" id="1one" style="font-size:40px;cursor:pointer;"  class="fa fa-star checked"></span>
-            <span onmouseover="starmark(this)" onclick="starmark(this)" id="2one"  style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
-            <span onmouseover="starmark(this)" onclick="starmark(this)" id="3one"  style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
-            <span onmouseover="starmark(this)" onclick="starmark(this)" id="4one"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
-            <span onmouseover="starmark(this)" onclick="starmark(this)" id="5one"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
-            <br/>
+            <div class="star-class">
+              <span onmouseover="starmark(this)" onclick="starmark(this)" id="1one" style="cursor:pointer;"  class="fa fa-star checked"></span>
+              <span onmouseover="starmark(this)" onclick="starmark(this)" id="2one"  style="cursor:pointer;" class="fa fa-star "></span>
+              <span onmouseover="starmark(this)" onclick="starmark(this)" id="3one"  style="cursor:pointer;" class="fa fa-star "></span>
+              <span onmouseover="starmark(this)" onclick="starmark(this)" id="4one"  style="cursor:pointer;" class="fa fa-star"></span>
+              <span onmouseover="starmark(this)" onclick="starmark(this)" id="5one"  style="cursor:pointer;" class="fa fa-star"></span>
+              <br><br>
+            </div>
             <input id="rating-input" type="hidden" name="rating" value="">
             <input id="submit-button" type="submit" name="submit" value="Submit" method="post" onclick="result();">
           </form>
@@ -131,7 +135,6 @@
     <div class="footer-inner-body">
       <h4>MENU</h4>
       <a href="#about-page-section">About Us</a><br>
-      <a href="#contact-page-section">Contact Us</a><br>
       {% if request.user.is_authenticated %}
       <a href="{% url 'Logout_Page' %}">Logout</a>
       {% else %}
