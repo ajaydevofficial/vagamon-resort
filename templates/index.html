@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title>Wagamon Resort</title>
     <link rel="stylesheet" href="{% static "css/home.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
   <style media="screen">
@@ -45,6 +47,10 @@
       background-color: #d9d9d9;
       background-image: url("static/images/concrete-wall.png");
       opacity: 0.9;
+    }
+    .checked{
+      color: orange;
+
     }
   </style>
     <div class="half-body">
@@ -95,18 +101,24 @@
       <section id="contact-page-section">
           <div class="inner-page-section">
           <h1>Post a review</h1>
-          <form class="contact-form" action="#" method="post">{% csrf_token %}
+          <form class="contact-form" method="post">{% csrf_token %}
             <label for="name">Name : </label><br>
-            <input required type="text" name="name" placeholder="Enter Name"><br>
+            <input id ="name" required type="text" name="name" placeholder="Enter Name"><br>
             <label for="email">Email : </label><br>
-            <input required ="true" type="email" name="email" value="" placeholder="Enter Email"><br>
+            <input id="email" required ="true" type="email" name="email" value="" placeholder="Enter Email"><br>
             <label for="email">Phone(With Country Code) : </label><br>
-            <input required ="true" type="number" name="phone" value="" placeholder="Enter Phone"><br>
+            <input id="phone" required ="true" type="number" name="phone" value="" placeholder="Enter Phone"><br>
             <label for="something">Remarks: </label><br>
-            <input id="something" required type="text" name="query" placeholder="Type Something"><br>
+            <input id="something" required type="text" name="something" placeholder="Type Something"><br><br>
             <script src="{% static 'js/rating.js' %}"></script>
-
-            <input id="submit-button" type="submit" name="submit" value="Submit" method="post">
+            <span onmouseover="starmark(this)" onclick="starmark(this)" id="1one" style="font-size:40px;cursor:pointer;"  class="fa fa-star checked"></span>
+            <span onmouseover="starmark(this)" onclick="starmark(this)" id="2one"  style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+            <span onmouseover="starmark(this)" onclick="starmark(this)" id="3one"  style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+            <span onmouseover="starmark(this)" onclick="starmark(this)" id="4one"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+            <span onmouseover="starmark(this)" onclick="starmark(this)" id="5one"  style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+            <br/>
+            <input id="rating-input" type="hidden" name="rating" value="">
+            <input id="submit-button" type="submit" name="submit" value="Submit" method="post" onclick="result();">
           </form>
           {% if success%}
           <script type="text/javascript" src="{% static 'js/succes.js' %}"></script>
