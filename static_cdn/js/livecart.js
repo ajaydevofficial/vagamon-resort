@@ -1,6 +1,7 @@
 
 function display()
 {
+    alert("Script runnning");
     var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
     var fd = document.getElementById("search-input-in").value;
     var sd = document.getElementById("search-input-out").value;
@@ -11,11 +12,11 @@ function display()
     var base =  document.getElementById("search-input").value;
     var button = document.getElementById("search-button");
 
-    if(base == "cottage-only")
+    if(base == "Cottage and Food" or "Cottage")
     {
       base = 2000;
     }
-    if(base == "other")
+    if(base == "Other")
     {
       base = 1500;
     }
@@ -31,6 +32,7 @@ function display()
     if(isNaN(num))
     {
       button.value = "Pay Rs.0";
+      alert(".........")
     }
     else
     {

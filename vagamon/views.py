@@ -20,10 +20,6 @@ def tour_page(request):
     context = {}
     return render(request,"tour.html",context)
 
-def checkout_page(request):
-    context = {}
-    return render(request,"checkout.html",context)
-
 def login_page(request):
     context = {}
     if request.method =='POST':
@@ -48,8 +44,10 @@ def book_page(request):
             qs = booking.objects.get(package=package,inDate=inDate,outDate=outDate)
             if qs:
                 return render(request,"book.html",{"exists":True})
+            else:
+                return render(request,"checkout.html",{"package":package,"inDate": inDate,"outDate": outDate})
         except:
-            pass
+            return render(request,"checkout.html",{"package":package,"inDate": inDate,"outDate": outDate})
     return render(request,"book.html",context)
 
 def admin_page(request):

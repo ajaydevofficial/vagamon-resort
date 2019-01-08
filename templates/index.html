@@ -94,7 +94,7 @@
       </section>
       <section id="contact-page-section">
           <div class="inner-page-section">
-          <h1>Contact Us</h1>
+          <h1>Post a review</h1>
           <form class="contact-form" action="#" method="post">{% csrf_token %}
             <label for="name">Name : </label><br>
             <input required type="text" name="name" placeholder="Enter Name"><br>
@@ -102,8 +102,10 @@
             <input required ="true" type="email" name="email" value="" placeholder="Enter Email"><br>
             <label for="email">Phone(With Country Code) : </label><br>
             <input required ="true" type="number" name="phone" value="" placeholder="Enter Phone"><br>
-            <label for="something">What's on your mind : </label><br>
+            <label for="something">Remarks: </label><br>
             <input id="something" required type="text" name="query" placeholder="Type Something"><br>
+            <script src="{% static 'js/rating.js' %}"></script>
+
             <input id="submit-button" type="submit" name="submit" value="Submit" method="post">
           </form>
           {% if success%}

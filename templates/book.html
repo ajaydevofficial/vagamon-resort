@@ -69,14 +69,15 @@
       </div>
       <div class="text-center">
         <div class="form-div">
-          <form class="form-control" action="{% url 'Checkout_Page' %}" method="post">{% csrf_token %}
+          <form class="form-control" method="post">{% csrf_token %}
             <script type="text/javascript" src="{% static 'js/datecmp.js' %}">compare();</script>
             <h1 id="search-text">\ Search Here \</h1>
             <br>
             <label class="search-input" for="select-package">Package </label><br>
             <select required class="search-input" name="package-type">
               <option value="">Select Package</option>
-              <option class="search-input" value="cottage-only">Cottage and Food</option>
+              <option class="search-input" value="Cottage and Food">Cottage and Food</option>
+              <option class="search-input" value="Other">Other</option>
             </select>
             <br>
             <label class="search-input" for="in-date">Check-in date </label><br>
