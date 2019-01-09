@@ -102,29 +102,36 @@
           </div>
       </section>
       <section class="review-outer-page-section">
-          <h1>User Reviews</h1>
-          <div class="review-page-section">
+          <h1>User Reviews</h1><br>
+          <div class="review-page-section" id="review-page-section">
             {% for object in reviews %}
               {% if object.display %}
-              <div class="user">
-                <img src="static/images/user.jpg" class="user">
-                <span id="1one"  class="fa fa-star checked"></span>
-                <h4>{{object.name}}</h4>
-                <h6 id="review">{{object.text}}</h6>
-                <hr><br>
-              </div>
+                <div class="img">
+                  <img src="static/images/user.jpg"><br>
+                </div>
+                <div class="user">
+                  <script src="{% static 'js/stargen.js' %}"></script>
+                  <div class="star"></div>
+                  <p id="star-gen"></p>
+                  <h4>{{object.name}}</h4>
+                  <p class="review">{{object.text}}</p>
+                  <br>
+                </div>
               {% endif %}
             {% endfor %}
-            <div clas="hidden" id="hidden" style="display:none;">
+            <div class="hidden" id="hidden" style="display:none;">
               {% for object in reviews %}
                 {% if not object.display %}
-                <div class="user">
-                  <img src="static/images/user.jpg" class="user">
-                  <span id="1one"  class="fa fa-star checked"></span>
-                  <h4>{{object.name}}</h4>
-                  <h6 id="review">{{object.text}}</h6>
-                  <hr><br>
-                </div>
+                  <div class="img">
+                    <img src="static/images/user.jpg">
+                  </div>
+                  <div class="user" id="user">
+                    <div class="star"></div>
+                    <script src="{% static 'js/stargen.js' %}"></script>
+                    <h4>{{object.name}}</h4>
+                    <p class="review">{{object.text}}</p>
+                    <br>
+                  </div>
                 {% endif %}
               {% endfor %}
           </div>
