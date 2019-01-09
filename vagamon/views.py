@@ -28,6 +28,7 @@ def tour_page(request):
     context = {}
     return render(request,"tour.html",context)
 
+
 def login_page(request):
     context = {}
     if request.method =='POST':

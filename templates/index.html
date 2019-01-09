@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static "css/home.css" %}">
     <link rel="stylesheet" href="{% static "css/star.css" %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="{% static 'js/show.js' %}">showHide();</script>
   </head>
   <body>
   <style media="screen">
@@ -104,15 +105,34 @@
           <h1>User Reviews</h1>
           <div class="review-page-section">
             {% for object in reviews %}
-            <div class="user">
-              <img src="static/images/user.jpg" class="user">
-              <span id="1one"  class="fa fa-star checked"></span>
-              <h3>{{object.name}}</h3>
-              <h6 id="review">{{object.text}}</h6>
-              <hr><br>
-            </div>
+              {% if object.display %}
+              <div class="user">
+                <img src="static/images/user.jpg" class="user">
+                <span id="1one"  class="fa fa-star checked"></span>
+                <h4>{{object.name}}</h4>
+                <h6 id="review">{{object.text}}</h6>
+                <hr><br>
+              </div>
+              {% endif %}
             {% endfor %}
+            <div clas="hidden" id="hidden" style="display:none;">
+              {% for object in reviews %}
+                {% if not object.display %}
+                <div class="user">
+                  <img src="static/images/user.jpg" class="user">
+                  <span id="1one"  class="fa fa-star checked"></span>
+                  <h4>{{object.name}}</h4>
+                  <h6 id="review">{{object.text}}</h6>
+                  <hr><br>
+                </div>
+                {% endif %}
+              {% endfor %}
           </div>
+      </section>
+        <div class="show-more">
+          <input id="refer" type="hidden" value =0>
+          <input id="submit-button-new" type="button" name="show" value="Show More" onclick="showHide();">
+        </div>
       </section>
       <section id="contact-page-section">
           <div class="inner-page-section">

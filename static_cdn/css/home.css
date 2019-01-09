@@ -145,6 +145,16 @@ hr{
   color: black;
   background-color: #F23150;
   border: none;
+  cursor: pointer;
+}
+#submit-button-new{
+  font-size: 90%;
+  padding: 1%;
+  width:auto;
+  color: black;
+  background-color: #F23150;
+  border: none;
+  cursor: pointer;
 }
 #something{
   margin-top: 1%;
@@ -186,4 +196,8 @@ hr{
 }
 #review{
   margin-left: 1%;
+}
+.show-more{
+  margin: 1% 0 1% 0;
+  text-align: center;
 }
