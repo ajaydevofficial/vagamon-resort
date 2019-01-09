@@ -6,6 +6,12 @@ from django.contrib.auth import logout
 
 def home_page(request):
     context = {}
+    try:
+        reviews_view  = review.objects.raw("SELECT * from review_review")
+        context = {"reviews":reviews_view}
+    except:
+        pass
+
     if request.method=='POST':
         name = request.POST['name']
         email = request.POST['email']

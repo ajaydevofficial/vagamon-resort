@@ -100,6 +100,21 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
       </section>
+      <section class="review-outer-page-section">
+          <h1>User Reviews</h1>
+          <div class="review-page-section">
+            {% for object in reviews %}
+            <div class="user">
+              <img src="static/images/user.jpg" class="user">
+              <span id="1one"  class="fa fa-star checked"></span>
+              <h3>{{object.name}}</h3>
+              <p>{{object.email}}</p><br>
+              <h6 id="review">{{object.text}}</h6>
+              <hr><br>
+            </div>
+            {% endfor %}
+          </div>
+      </section>
       <section id="contact-page-section">
           <div class="inner-page-section">
           <h1>Post a review</h1>
