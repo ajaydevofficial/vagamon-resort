@@ -173,7 +173,7 @@ hr{
   margin:6%;
 }
 .review-page-section{
-  margin: 1% 2% 5% 25%;
+  margin: 1% 2% 1% 25%;
 }
 .img img {
   width: 65px;
@@ -197,7 +197,6 @@ hr{
   margin-bottom: 10%;
 }
 .show-more{
-  margin: 1% 0 1% 0;
   text-align: center;
 }
 .img{
@@ -205,4 +204,7 @@ hr{
   float: left;
   margin-right: 5%;
   margin-bottom: 15%;
+}
+.star{
+  color: orange;
 }

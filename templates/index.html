@@ -37,15 +37,34 @@
       background-size: 350%;
 
     }
+    body{
+    background-image: url("static/images/concrete-wall.png");
+    background-color: #e2e2e2;
+    opacity: 0.9;
+    }
     #about-page-section{
       padding-top: 5%;
-      background-color: #e2e2e2;
+      background-color: #e8e8e8;
       background-image: url("static/images/concrete-wall.png");
-      opacity: 0.9;
+      opacity: 0.8;
     }
     #contact-page-section{
       padding-top: 5%;
       background-color: #d9d9d9;
+      background-image: url("static/images/concrete-wall.png");
+      opacity: 0.9;
+    }
+    .review-outer-page-section{
+      padding-top: 5%;
+      margin-bottom: 0px;;
+      background-color: #e2e2e2;
+      background-image: url("static/images/concrete-wall.png");
+      opacity: 0.9;
+    }
+    .show-more{
+      margin-top:0px;
+      margin-bottom: 2%;
+      background-color: #e2e2e2;
       background-image: url("static/images/concrete-wall.png");
       opacity: 0.9;
     }
@@ -103,15 +122,16 @@
       </section>
       <section class="review-outer-page-section">
           <h1>User Reviews</h1><br>
-          <div class="review-page-section" id="review-page-section">
+          <div class="review-page-section">
             {% for object in reviews %}
               {% if object.display %}
                 <div class="img">
                   <img src="static/images/user.jpg"><br>
                 </div>
                 <div class="user">
-                  <script src="{% static 'js/stargen.js' %}"></script>
-                  <div class="star"></div>
+                  <div class="star">
+                    {{ object.code }}
+                  </div>
                   <p id="star-gen"></p>
                   <h4>{{object.name}}</h4>
                   <p class="review">{{object.text}}</p>
@@ -126,16 +146,16 @@
                     <img src="static/images/user.jpg">
                   </div>
                   <div class="user" id="user">
-                    <div class="star"></div>
-                    <script src="{% static 'js/stargen.js' %}"></script>
+                    <div class="star">
+                      {{ object.code }}
+                    </div>
                     <h4>{{object.name}}</h4>
-                    <p class="review">{{object.text}}</p>
-                    <br>
+                    <p class="review">{{object.text}}</p><br>
                   </div>
                 {% endif %}
               {% endfor %}
           </div>
-      </section>
+      </section class ="show-more">
         <div class="show-more">
           <input id="refer" type="hidden" value =0>
           <input id="submit-button-new" type="button" name="show" value="Show More" onclick="showHide();">

@@ -18,7 +18,10 @@ def home_page(request):
         phone = request.POST['phone']
         text = request.POST['something']
         rating = int(request.POST["rating"])
-        review.objects.create(name=name,email=email,phone=phone,text=text,rating=rating)
+        code = ""
+        for i in range(0,rating):
+            code = code + '★'
+        review.objects.create(name=name,email=email,phone=phone,text=text,rating=rating,code=code)
         context = {"reviews":reviews_view,"success":True}
         return render(request,"index.html",context)
 

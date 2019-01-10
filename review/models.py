@@ -7,6 +7,7 @@ class review(models.Model):
     text = models.CharField(max_length=400)
     rating = models.DecimalField(default=0,max_digits=3,decimal_places=0)
     display = models.DecimalField(default=0,max_digits=3,decimal_places=0,null=True)
+    code = models.CharField(max_length=200,default='a')
     def __str__(self):
         return self.email
 
