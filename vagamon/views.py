@@ -77,3 +77,7 @@ def admin_page(request):
 def logout_page(request):
     logout(request)
     return redirect(home_page)
+
+def checkout_page(request):
+    context = {}
+    return render(request,"checkout.html",context)
