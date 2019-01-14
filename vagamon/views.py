@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model,authenticate,login
 from booking.models import booking
 from review.models import review
 from django.contrib.auth import logout
+import datetime
 
 def home_page(request):
     context = {}
@@ -52,14 +53,19 @@ def book_page(request):
         package = request.POST['package-type']
         inDate = request.POST['in-date']
         outDate = request.POST['out-date']
+        ind = request.POST['individuals']
+        request.session['package'] = package
+        request.session['inDate'] = inDate
+        request.session['outDate'] = outDate
+        request.session['ind'] = ind
         try:
             qs = booking.objects.get(package=package,inDate=inDate,outDate=outDate)
             if qs:
                 return render(request,"book.html",{"exists":True})
             else:
-                return render(request,"checkout.html",{"package":package,"inDate": inDate,"outDate": outDate})
+                return redirect(checkout_page)
         except:
-            return render(request,"checkout.html",{"package":package,"inDate": inDate,"outDate": outDate})
+            return redirect(checkout_page)
     return render(request,"book.html",context)
 
 def admin_page(request):
@@ -79,5 +85,20 @@ def logout_page(request):
     return redirect(home_page)
 
 def checkout_page(request):
-    context = {}
-    return render(request,"checkout.html",context)
+    base = 0
+    try:
+        package = request.session['package']
+        if package == "Cottage and Food":
+            base = 1000
+        elif package =='Other':
+            base = 2000
+        ind = int(request.session['ind'])
+        inDate = datetime.datetime.strptime(request.session['inDate'], "%Y-%m-%d").date()
+        outDate = datetime.datetime.strptime(request.session['outDate'], "%Y-%m-%d").date()
+        day = (outDate-inDate).days
+        amount = ind*day*base
+        amount_view = "Pay Rs."+str(amount)
+        context = {"amount_view":amount_view,"inDate":inDate,"outDate":outDate,"ind":ind,"package":package,"Break" : False,"amount":amount}
+        return render(request,"checkout.html",context)
+    except:
+        return render(request,"checkout.html",{"Break" : True})

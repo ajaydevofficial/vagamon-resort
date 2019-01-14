@@ -59,25 +59,34 @@
       </div>
       <div class="text-center">
         <div class="form-div">
-          <form class="form-control" action="#" method="post">{% csrf_token %}
-            <script type="text/javascript" src="{% static 'js/livecart.js' %}"></script>
-            <script type="text/javascript">display();</script>
-            <h1 id="search-text">\ Checkout \</h1><hr>
-            <br>
-            <label class="search-input" for="select-package">Package </label><br>
-            <select required id="search-input" name="package-type" >
-              <!--option class="search-input" value={{package}}>{{package}}</option-->
-              <option class="search-input" value="Cottage">Cottage</option>
-            </select>
-            <br>
-            <label class="search-input" for="in-date">Check-in date </label><br>
-            <input required id="search-input-in" type="date" name="in-date" onchange="display();"><br>
-            <label class="search-input" for="out-date">Check-out date </label><br>
-            <input required id="search-input-out" type="date" name="out-date" onchange="display();" ><br>
-            <label class="search-input" for="indiviuals">Indiviuals</label><br>
-            <input required id="search-input-min" type="number" name="individuals" value="0" onchange="display();"><br><hr>
-            <input id="search-button" type="submit" name="search" value="Pay Rs.0">
-          </form>
+          {% if Break %}
+              <h1>404 not Found!</h1>
+          {% else %}
+            <div class="inner-form-div">
+              <h1>Confirm Order Details</h1><br>
+                <tr>
+                  <td class="heading">Package</td>
+                  <td><pre>{{package}}</pre></td>
+                </tr>
+                <tr>
+                  <td class="heading">Check in</td>
+                  <td><pre>{{inDate}}</pre></td>
+                </tr>
+                <tr>
+                  <td class="heading">Check out</td>
+                  <td><pre>{{outDate}}</pre></td>
+                </tr>
+                <tr>
+                  <td class="heading">Individuals</td>
+                  <td><pre>{{ind}}</pre></td>
+                </tr>
+                <tr>
+                  <td class="heading">Order Total</td>
+                  <td><pre>Pay Rs.{{package}}</pre></td>
+                </tr>
+              <button type="button" name="button" value={{amount}}>{{amount_view}}</button>
+            </div>
+          {% endif %}
         </div>
         <br><br>
       </div>

@@ -83,6 +83,8 @@
             <input required id="startDate" type="date" name="in-date"><br>
             <label class="search-input" for="out-date">Check-out date </label><br>
             <input required id="endDate" type="date" name="out-date" onblur="compare();"><br>
+            <label class="search-input" for="indiviuals">Indiviuals</label><br>
+            <input required id="search-input-min" type="number" name="individuals" value="0"><br>
             <input class="search-button" type="submit" name="search" value="Book">
             {% if exists %}
             <div class="error-class">
