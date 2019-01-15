@@ -62,30 +62,35 @@
           {% if Break %}
               <h1>404 not Found!</h1>
           {% else %}
+            <h1>Confirm Order Details</h1><br>
             <div class="inner-form-div">
-              <h1>Confirm Order Details</h1><br>
                 <tr>
-                  <td class="heading">Package</td>
+                  <td><pre class="heading">Package</pre></td>
                   <td><pre>{{package}}</pre></td>
-                </tr>
+                </tr><hr>
                 <tr>
-                  <td class="heading">Check in</td>
+                  <td><pre class="heading">Check In</pre></td>
                   <td><pre>{{inDate}}</pre></td>
-                </tr>
+                </tr><hr>
                 <tr>
-                  <td class="heading">Check out</td>
+                  <td><pre class="heading">Check Out</pre></td>
                   <td><pre>{{outDate}}</pre></td>
-                </tr>
+                </tr><hr>
                 <tr>
-                  <td class="heading">Individuals</td>
+                  <td><pre class="heading">Individuals</pre></td>
                   <td><pre>{{ind}}</pre></td>
-                </tr>
+                </tr><hr>
                 <tr>
-                  <td class="heading">Order Total</td>
-                  <td><pre>Pay Rs.{{package}}</pre></td>
+                  <td><pre class="heading">Order Total</pre></td>
+                  <td><pre>Rs.{{amount}}</pre></td>
                 </tr>
-              <button type="button" name="button" value={{amount}}>{{amount_view}}</button>
+
             </div>
+            <div class="button">
+              <a href="#" id ="button" >{{amount_view}}</a>
+              <a href="{% url 'Book_Page' %}" id = "update-button">Update Order</a>
+            </div>
+
           {% endif %}
         </div>
         <br><br>

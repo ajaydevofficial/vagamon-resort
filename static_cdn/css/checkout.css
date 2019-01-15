@@ -136,7 +136,6 @@ hr{
   color: rgb(0, 0, 26);
   margin:5% 15% 5%;
   border-radius: 5px;
-  font-family: Montserrat-Regular;
 }
 #search-button{
   background-color: rgb(255, 130, 99);
@@ -223,7 +222,7 @@ hr{
   font-family: Montserrat-Regular;
   text-align: center;
 }
-button{
+.button{
   text-align: center;
 }
 pre{
@@ -231,4 +230,38 @@ pre{
 }
 .heading{
   font-family: Montserrat-ExtraBold;
+
+}
+.inner-form-div{
+  text-align: center;
+}
+hr{
+  margin-left: 25%;
+  margin-right:25%;
+  border-width: 1px;
+}
+#button{
+  font-size: 90%;
+  padding: 1.5%;
+  width:auto;
+  color: black;
+  background-color: #F23150;
+  border: none;
+  cursor: pointer;
+  font-family: Montserrat-Regular;
+  text-decoration: none;
+}
+#update-button{
+  font-size: 90%;
+  padding: 1.5%;
+  width:auto;
+  color: black;
+  background-color: #F23150;
+  border: none;
+  cursor: pointer;
+  font-family: Montserrat-Regular;
+  text-decoration: none;
+}
+.button{
+  margin-top: 5%;
 }
