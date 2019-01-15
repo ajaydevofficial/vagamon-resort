@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model,authenticate,login
 from booking.models import booking
 from review.models import review
 from django.contrib.auth import logout
+from booking_count.models import booking_count
 import datetime
 
 def home_page(request):
@@ -70,13 +71,20 @@ def book_page(request):
 
 def admin_page(request):
     context = {}
+    count_obj = booking_count.objects.all()
+    try:
+        count = count_obj.values_list('count',flat=True)[0]
+    except:
+        pass
     if request.method == 'POST':
         package = request.POST['package-type']
         inDate = request.POST['in-date']
         outDate = request.POST['out-date']
         status = request.POST['status']
         individuals = request.POST['individuals']
-        booking.objects.create(package=package,inDate=inDate,outDate=outDate,status=status,individuals=individuals)
+        count = count+1
+        booking.objects.create(package=package,inDate=inDate,outDate=outDate,status=status,individuals=individuals,booking_id=count)
+        booking_count.objects.filter().update(count=count)
         return render(request,"admin.html",{"success":True})
     return render(request,"admin.html",context)
 
