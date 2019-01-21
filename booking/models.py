@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 BOOKING_STATUS = (
 ('paid','Paid'),
 ('unpaid','Unpaid')
