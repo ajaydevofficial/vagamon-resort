@@ -31,6 +31,7 @@ urlpatterns = [
     path('admin-book/',admin_page,name="Admin_Page"),
     path('logout/',logout_page,name="Logout_Page"),
     path('checkout/',checkout_page,name="Checkout_Page"),
+    url(r'^paypal/',include('paypal.standard.ipn.urls')),
 
 ]
 

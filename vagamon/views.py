@@ -104,11 +104,14 @@ def checkout_page(request):
         inDate = datetime.datetime.strptime(request.session['inDate'], "%Y-%m-%d").date()
         outDate = datetime.datetime.strptime(request.session['outDate'], "%Y-%m-%d").date()
         day = (outDate-inDate).days
+
         if day ==0:
             day =1
         amount = ind*day*base
         amount_view = "Pay Rs."+str(amount)
         context = {"amount_view":amount_view,"inDate":inDate,"outDate":outDate,"ind":ind,"package":package,"Break" : False,"amount":amount}
+
+
         return render(request,"checkout.html",context)
     except:
         return render(request,"checkout.html",{"Break" : True})
