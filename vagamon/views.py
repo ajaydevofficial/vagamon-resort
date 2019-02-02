@@ -33,6 +33,9 @@ def tour_page(request):
     context = {}
     return render(request,"tour.html",context)
 
+def place_page(request):
+    context = {}
+    return render(request,"places.html",context)
 
 def login_page(request):
     context = {}
@@ -115,3 +118,6 @@ def checkout_page(request):
         return render(request,"checkout.html",context)
     except:
         return render(request,"checkout.html",{"Break" : True})
+
+def package_view(request):
+    return render(request,"packages.html",{})

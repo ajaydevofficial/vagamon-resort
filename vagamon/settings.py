@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'gallery',
     'booking_count',
+    'packages',
     'review',
     'booking',
     'django.contrib.admin',

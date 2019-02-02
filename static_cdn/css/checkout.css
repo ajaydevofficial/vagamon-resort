@@ -83,9 +83,6 @@ body{
   background-image: url("C:/Wagamon-farm/images/concrete-wall.png");
   opacity: 0.9;
 }
-hr{
-  color: #444444;
-}
 .footer-body{
   font-family: Montserrat-Regular;
   background-color: rgb(0, 0, 26);
@@ -235,7 +232,7 @@ pre{
 .inner-form-div{
   text-align: center;
 }
-hr{
+#hr{
   margin-left: 25%;
   margin-right:25%;
   border-width: 1px;
