@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from .views import home_page,tour_page,book_page,login_page,admin_page,logout_page,checkout_page,package_view,place_page
+from .views import home_page,tour_page,book_page,login_page,admin_page,logout_page,checkout_page,package_view,place_page,gallery_page,page_404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,7 +32,9 @@ urlpatterns = [
     path('logout/',logout_page,name="Logout_Page"),
     path('checkout/',checkout_page,name="Checkout_Page"),
     path('packages/',package_view,name="Package_Page"),
-    path('places/',place_page,name="Place_Page")
+    path('places/',place_page,name="Place_Page"),
+    path('gallery/',gallery_page,name="Gallery"),
+    path('404/',page_404,name="404"),
 
 ]
 

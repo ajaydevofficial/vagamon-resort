@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Wagamon Resort</title>
+    <link rel="stylesheet" href="{% static "css/checkout.css" %}">
+  </head>
+  <body>
+  <style media="screen">
+  @font-face {
+    font-family: Leaf;
+    src:url("{% static "font/leaf.ttf" %}");
+  }
+  @font-face {
+    font-family: Montserrat-ExtraBold;
+    src: url("{% static "font/Montserrat-ExtraBold.ttf" %}");
+  }
+  @font-face {
+    font-family: Montserrat-Regular;
+    src: url("{% static "font/Montserrat-Regular.ttf" %}");
+  }
+  @font-face {
+    font-family: Montserrat-Bold;
+    src: url("{% static "font/Montserrat-Bold.ttf" %}");
+
+  }
+  .about-page-section{
+    padding-top:0%;
+    background-color: #e2e2e2;
+    background-image: url("{% static "images/concrete-wall.png" %}");
+    opacity: 0.9;
+  }
+  .contact-page-section{
+    padding-top: 5%;
+    background-color: #d9d9d9;
+    background-image: url("{% static "images/concrete-wall.png" %}");
+    opacity: 0.9;
+  }
+  </style>
+    <div class="about-page-section">
+      <div class="outer-background">
+        <div class="header-outer">
+          <div class="header-inner">
+              <div class="name-container">
+                <div class="inner-name-container">
+                  <a href="{% url 'Home_Page' %}" id="title-head">VAGAMON FARM & RESORT</a>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="menu-layer-top">
+          <div class="menu-layer">
+            <a href="{% url 'Home_Page' %}">Home</a>
+            <a href="{% url 'Tour_Page' %}">Take A Tour</a>
+            <a href="{% url 'Place_Page' %}">Tourist Spots</a>
+            <a href="{% url 'Gallery' %}">Gallery</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="form-div">
+            <h1>This part is under construction and will be available soon !</h1><br>
+            <div class="inner-form-div">
+        </div>
+        <div class="button">
+              
+            </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </body>
+  <div class="footer-body">
+    <div class="footer-inner-body">
+      <h4>MENU</h4>
+      <a href="{% url 'Tour_Page' %}">Take a tour</a><br>
+      <a href="{% url 'Gallery' %}">Gallery</a><br>
+      <a href="{% url 'Place_Page' %}">Places to visit</a><br>
+      <a href="{% url 'Home_Page' %}#about-page-section">About us</a><br>
+      <a href="{% url 'Home_Page' %}#contact-page-section">Contact us</a><br>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'Logout_Page' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'Login_Page' %}">Admin Login</a>
+      {% endif %}<hr>
+      <div class="flex-box">
+        <div>
+          <p>&copy Copyright Wagamon Farms & Resorts</p><br>
+        </div>
+        <div>
+          <p id="design-label">Designed and developed by Ajay Dev D</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>

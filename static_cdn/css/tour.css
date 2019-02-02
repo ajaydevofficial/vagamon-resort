@@ -52,16 +52,18 @@ body{
 }
 .menu-layer{
   font-family:Montserrat-Regular;
-  margin: 2%;
+  margin: 0%;
   text-align: center;
   padding: 1%;
+
 }
 .menu-layer a{
-  margin: 3%;
+  margin: 1.5%;
   text-decoration: none;
   color: #e7e7e7;
   padding:1%;
   font-size: 85%;
+
 }
 .name-container{
   border-style: solid;

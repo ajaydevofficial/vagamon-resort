@@ -56,13 +56,13 @@ body{
 }
 .menu-layer{
   font-family:Montserrat-Regular;
-  margin: 2%;
+  margin: 0%;
   text-align: center;
   padding: 1%;
 
 }
 .menu-layer a{
-  margin: 2%;
+  margin: 1.5%;
   text-decoration: none;
   color: #e7e7e7;
   padding:1%;
@@ -207,4 +207,9 @@ hr{
 }
 .star{
   color: orange;
+}
+#player{
+  margin: 5% 20% 5% 25%;
+  width:50.5%;
+
 }

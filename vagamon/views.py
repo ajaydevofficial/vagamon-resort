@@ -4,6 +4,7 @@ from booking.models import booking
 from review.models import review
 from django.contrib.auth import logout
 from booking_count.models import booking_count
+from gallery.models import image
 import datetime
 
 def home_page(request):
@@ -36,6 +37,16 @@ def tour_page(request):
 def place_page(request):
     context = {}
     return render(request,"places.html",context)
+
+def gallery_page(request):
+    try:
+        qs = image.objects.all()
+        print(qs)
+        context={"gallery":qs}
+    except:
+        print("Fail")
+        context = {}
+    return render(request,"gallery.html",context)
 
 def login_page(request):
     context = {}
@@ -121,3 +132,6 @@ def checkout_page(request):
 
 def package_view(request):
     return render(request,"packages.html",{})
+
+def page_404(request):
+    return render(request,"404.html",{})

@@ -48,6 +48,12 @@
       background-image: url("static/images/concrete-wall.png");
       opacity: 0.8;
     }
+    #review-page-section{
+      padding-top: 5%;
+      background-color: #d9d9d9;
+      background-image: url("static/images/concrete-wall.png");
+      opacity: 0.9;
+    }
     #contact-page-section{
       padding-top: 5%;
       background-color: #d9d9d9;
@@ -91,7 +97,8 @@
           <div class="menu-layer">
             <a href="{% url 'Home_Page' %}">Home</a>
             <a href="{% url 'Tour_Page' %}">Take A Tour</a>
-            <a href="{% url 'Home_Page' %}#about-page-section">About Us</a>
+            <a href="{% url 'Place_Page' %}">Tourist Spots</a>
+            <a href="{% url 'Gallery' %}">Gallery</a>
           </div>
         </div>
       </div>
@@ -101,13 +108,13 @@
            <h1>\ Welcome {{ user.get_username }} \</h1>
            <p>Manage your bookings</p>
            <div class="tour-button">
-             <a href="{% url 'Admin_Page' %}">ADD BOOKING</a>
+             <a href="{% url '404' %}">ADD BOOKING</a>
            </div>
            {% else %}
            <h1>\ Holidays at Vagamon \</h1>
            <p>Spent your precious holidays at our paradise</p>
            <div class="tour-button">
-             <a href="{% url 'Book_Page' %}">BOOK NOW</a>
+             <a href="{% url '404' %}">BOOK NOW</a>
            </div>
            {% endif %}
         </div>
@@ -117,7 +124,7 @@
       <section id="about-page-section">
           <div class="inner-page-section">
           <h1>About Us</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Vagamon Farm and Resort is a luxury resort located at Kottamala, 9km from Vagamon town. It is one of the best resorts that offers quality service to the customers. The resort resides in the area which includes a farm owned by the same which adds beauty and a natural touch to the place. If you are looking to spent a quality time then you are at the right place. Elegant, exclusive and in its essence a state of mind, the resort is near a tea estate area located in Vagamon, a largely mountainous district in southern Kerala, a state in the south of India. Situated beneath an enormous canopy of a lush tropical rainforest, journey into nature's wonderland - in the company of amphibians, birds, fish, mammals, reptiles, flowering plants and butterflies that inhabit the dense forest near the resort area. You will be seduced by the promise of discovery and bliss</p>
           </div>
       </section>
       <section class="review-outer-page-section">
@@ -161,7 +168,7 @@
           <input id="submit-button-new" type="button" name="show" value="Show More" onclick="showHide();">
         </div>
       </section>
-      <section id="contact-page-section">
+      <section id="review-page-section">
           <div class="inner-page-section">
           <h1>Post a review</h1>
           <form class="contact-form" method="post">{% csrf_token %}
@@ -190,18 +197,34 @@
           {% endif %}
           </div>
       </section>
+      <section id=videoplayer><br><br><br>
+        <h1 style="text-align:center;">Take a Video Tour</h1>
+        <div id="player"></div>
+        <script src="{% static 'js/youtubeapi.js' %}"></script>
+      </section>
+      <section id="contact-page-section">
+          <div class="inner-page-section">
+          <h1>Contact Us</h1>
+          <p>Vagamon Farms & Resort,<br>Kottamala,Vagamon <br> Pin : 685503 </p>
+          <p>Phone : 9526667471,9446367471</p>
+          <p>email : vagamonfarmandresort@gmail.com</p>
+          </div>
+      </section>
     </div>
   </body>
   <div class="footer-body">
     <div class="footer-inner-body">
       <h4>MENU</h4>
-      <a href="#about-page-section">About Us</a><br>
+      <a href="{% url 'Tour_Page' %}">Take a tour</a><br>
+      <a href="{% url 'Gallery' %}">Gallery</a><br>
+      <a href="{% url 'Place_Page' %}">Places to visit</a><br>
+      <a href="{% url 'Home_Page' %}#about-page-section">About us</a><br>
+      <a href="{% url 'Home_Page' %}#contact-page-section">Contact us</a><br>
       {% if request.user.is_authenticated %}
       <a href="{% url 'Logout_Page' %}">Logout</a>
       {% else %}
       <a href="{% url 'Login_Page' %}">Admin Login</a>
-      {% endif %}
-      <hr>
+      {% endif %}<hr>
       <div class="flex-box">
         <div>
           <p>&copy Copyright Wagamon Farms & Resorts</p><br>
