@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'packages',
     'review',
     'booking',
+    'storages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -136,7 +137,15 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_root")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 MEDIA_URL = "/media/"
 
+from vagamon.aws.conf import *
+
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
+
+#AWS details
+AWS_GROUP_NAME = "vagamon_resort_group"
+AWS_USERNAME = "vagamon_resort_user"
+AWS_ACCESS_KEY_ID = "AKIAJAMACP2PIR42RP7Q"
+AWS_SECRET_KEY = "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"
