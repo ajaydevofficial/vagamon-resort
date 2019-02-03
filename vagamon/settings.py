@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'packages',
     'review',
     'booking',
-    'storages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,7 +136,7 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_root")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 MEDIA_URL = "/media/"
 
-from vagamon.aws.conf import *
+
 
 import dj_database_url
 db_from_env = dj_database_url.config()
