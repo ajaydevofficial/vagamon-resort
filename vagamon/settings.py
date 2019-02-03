@@ -143,8 +143,13 @@ db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
-#AWS details
-AWS_GROUP_NAME = "vagamon_resort_group"
-AWS_USERNAME = "vagamon_resort_user"
-AWS_ACCESS_KEY_ID = "AKIAJAMACP2PIR42RP7Q"
-AWS_SECRET_KEY = "o2rgJ3f2yF5UIEWKROxCkhT5n9Bl5jNTjIn+PUpT"
+
+CORS_REPLACE_HTTPS_REFERER      = True
+HOST_SCHEME                     = "https://"
+SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT             = True
+SESSION_COOKIE_SECURE           = True
+CSRF_COOKIE_SECURE              = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+SECURE_HSTS_SECONDS             = 1000000
+SECURE_FRAME_DENY               = True
