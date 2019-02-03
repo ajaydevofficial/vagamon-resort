@@ -28,6 +28,8 @@ html5lib==1.0.1
 pandocfilters==1.4.2
 parso==0.3.1
 partd==0.3.8
+psycopg2==2.7.7
+psycopg2-binary==2.7.7
 pytest-arraydiff==0.2
 pytest-astropy==0.4.0
 pytest-doctestplus==0.1.3
