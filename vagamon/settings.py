@@ -25,7 +25,7 @@ SECRET_KEY = '#7w4br8o8-zzremwa9&g1+!7go-%s+w-nn(8+$6)ib++6qmbwx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -135,3 +135,8 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_root")
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 MEDIA_URL = "/media/"
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
