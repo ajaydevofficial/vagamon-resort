@@ -143,7 +143,7 @@ db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
-
+"""
 CORS_REPLACE_HTTPS_REFERER      = False
 HOST_SCHEME                     = "http://"
 #SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -153,3 +153,11 @@ CSRF_COOKIE_SECURE              = False
 #SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 #SECURE_HSTS_SECONDS             = 1000000
 #SECURE_FRAME_DENY               = False
+"""
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://397f598117274480991a557bcb1f9569@sentry.io/1386153",
+    integrations=[DjangoIntegration()]
+)
