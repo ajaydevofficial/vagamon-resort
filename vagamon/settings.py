@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#7w4br8o8-zzremwa9&g1+!7go-%s+w-nn(8+$6)ib++6qmbwx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
 
@@ -130,9 +130,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_cdn","images"),
     os.path.join(BASE_DIR, "static_cdn","css"),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
+
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 MEDIA_URL = "/media/"
 
 
