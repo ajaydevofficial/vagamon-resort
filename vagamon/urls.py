@@ -21,6 +21,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from .views import home_page,tour_page,book_page,login_page,admin_page,logout_page,checkout_page,package_view,place_page,gallery_page,page_404
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,7 +36,7 @@ urlpatterns = [
     path('places/',place_page,name="Place_Page"),
     path('gallery/',gallery_page,name="Gallery"),
     path('404/',page_404,name="404"),
-
+    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT})
 ]
 
 if settings.DEBUG:
