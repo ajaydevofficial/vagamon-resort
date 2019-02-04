@@ -124,12 +124,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-"""STATICFILES_DIRS = [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "static","font"),
     os.path.join(BASE_DIR, "static","images"),
     os.path.join(BASE_DIR, "static","css"),
-]"""
+]
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
