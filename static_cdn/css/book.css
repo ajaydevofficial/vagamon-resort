@@ -74,18 +74,6 @@ body{
   text-align: center;
   opacity: 1;
 }
-#about-page-section{
-  padding-top: 5%;
-  background-color: #e2e2e2;
-  background-image: url("C:/Wagamon-farm/images/concrete-wall.png");
-  opacity: 0.9;
-}
-#contact-page-section{
-  padding-top: 5%;
-  background-color: #d9d9d9;
-  background-image: url("C:/Wagamon-farm/images/concrete-wall.png");
-  opacity: 0.9;
-}
 hr{
   color: #444444;
 }
