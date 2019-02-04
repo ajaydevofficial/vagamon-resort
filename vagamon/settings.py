@@ -131,7 +131,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_cdn","css"),
 ]
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_root")
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 MEDIA_URL = "/media/"
@@ -144,8 +144,8 @@ DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
 
-#CORS_REPLACE_HTTPS_REFERER      = False
-#HOST_SCHEME                     = "https://"
+CORS_REPLACE_HTTPS_REFERER      = False
+HOST_SCHEME                     = "http://"
 #SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT             = False
 SESSION_COOKIE_SECURE           = False
