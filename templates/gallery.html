@@ -62,9 +62,10 @@
         <div class="form-div">
             <h1>Gallery</h1><br>
             <div class="inner-form-div">
-              {% for object in gallery %}
-              <a href="{{object.image.url}}"><img height="150" width="300"src="{{object.image.url}}"></a>
-              {% endfor %}
+              <a href="{% static '/images/Gallery/image1.jpg' %}"><img height="150" width="300"src="{% static '/images/Gallery/image1.jpg' %}"></a>
+              <a href="{% static '/images/Gallery/image2.jpg' %}"><img height="150" width="300"src="{% static '/images/Gallery/image2.jpg' %}"></a>
+              <a href="{% static '/images/Gallery/image3.jpg' %}"><img height="150" width="300"src="{% static '/images/Gallery/image3.jpg' %}"></a>
+              <a href="{% static '/images/Gallery/image4.jpg' %}"><img height="150" width="300"src="{% static '/images/Gallery/image4.jpg' %}"></a>
             </div>
         </div>
         <br><br>

@@ -36,7 +36,6 @@ urlpatterns = [
     path('places/',place_page,name="Place_Page"),
     path('gallery/',gallery_page,name="Gallery"),
     path('404/',page_404,name="404"),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT})
 ]
 
 if settings.DEBUG:
