@@ -105,17 +105,17 @@
       <div class="text-center">
         <div class="centre-text-container">
            {% if request.user.is_superuser %}
-           <h1>\ Welcome {{ user.get_username }} \</h1>
-           <p>Manage your bookings</p>
+           <h1>\ Welcome {{ user.get_username }} \</h1><br><br><br>
+           <!--p>Manage your bookings</p>
            <div class="tour-button">
              <a href="{% url '404' %}">ADD BOOKING</a>
-           </div>
+           </div-->
            {% else %}
            <h1>\ Holidays at Vagamon \</h1>
-           <p>Spent your precious holidays at our paradise</p>
-           <div class="tour-button">
+           <p>Spent your precious holidays at our paradise</p><br><br>
+           <!--div class="tour-button">
              <a href="{% url '404' %}">BOOK NOW</a>
-           </div>
+           </div-->
            {% endif %}
         </div>
       </div>
